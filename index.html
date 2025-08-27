@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TOP - 島崎 烈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <!-- 左寄せ名前 -->
+  <div class="header-name">
+    <div>RETSU</div>
+    <div>SHIMAZAKI</div>
+  </div>
+
+  <!-- 右端ハンバーガー -->
+  <div id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<!-- スクリーン全体のモヤメニュー -->
+<div id="overlay-menu">
+  <div class="overlay-content">
+    <a href="index.html">TOP</a>
+    <a href="about.html">ABOUT</a>
+    <a href="#">INSTAGRAM</a>
+  </div>
+</div>
+
+<main>
+  <!-- 写真ギャラリー -->
+  <section class="gallery">
+    <img src="images/_DSC9381.jpg" alt="作品1">
+    <img src="images/_DSC9303.jpg" alt="作品2">
+    <img src="images/_DSC9522.jpg" alt="作品3">
+    <img src="images/IMG_7483.jpg" alt="作品4">
+    <img src="images/IMG_7638.jpg" alt="作品5">
+    <img src="images/IMG_7678.jpg" alt="作品6">
+  </section>
+</main>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const overlayMenu = document.getElementById('overlay-menu');
+
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  menuBtn.classList.toggle('open');
+  overlayMenu.classList.toggle('show');
+});
+
+// モヤ背景クリックで閉じる
+overlayMenu.addEventListener('click', () => {
+  overlayMenu.classList.remove('show');
+  menuBtn.classList.remove('open');
+});
+
+// モヤ内コンテンツはクリックで閉じない
+document.querySelector('.overlay-content').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+</script>
+
+</body>
+</html>

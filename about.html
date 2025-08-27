@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ABOUT - 島崎 烈</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<header>
+  <div class="header-name">
+    <div>RETSU</div>
+    <div>SHIMAZAKI</div>
+  </div>
+  <div id="menu-btn">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+</header>
+
+<div id="overlay-menu">
+  <div class="overlay-content">
+    <a href="index.html">TOP</a>
+    <a href="about.html">ABOUT</a>
+    <a href="#">INSTAGRAM</a>
+  </div>
+</div>
+
+<main>
+  <section>
+    <h2>ABOUTページ（仮）</h2>
+    <p>ここはABOUTページです。今は白紙でOK。</p>
+  </section>
+</main>
+
+<script>
+const menuBtn = document.getElementById('menu-btn');
+const overlayMenu = document.getElementById('overlay-menu');
+
+menuBtn.addEventListener('click', (e) => {
+  e.stopPropagation();
+  menuBtn.classList.toggle('open');
+  overlayMenu.classList.toggle('show');
+});
+
+overlayMenu.addEventListener('click', () => {
+  overlayMenu.classList.remove('show');
+  menuBtn.classList.remove('open');
+});
+
+document.querySelector('.overlay-content').addEventListener('click', (e) => {
+  e.stopPropagation();
+});
+</script>
+
+</body>
+</html>
